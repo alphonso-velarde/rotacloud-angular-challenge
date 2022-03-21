@@ -5,11 +5,11 @@
 		<th>Name</th>
 		<th>Users</th>
 	</thead>
-	<tr *ngFor="let role of roles| sort:'name'">
+	<tr *ngFor="let role of roles | sort:'name'">
 		<td>{{role.id}}</td>
 		<td><input type="text" [(ngModel)]="role.name" [style.color]="role.colour"></td>
 		<td>
-			<div class="tag" *ngFor="let user of returnRoleValue(role.id)">{{user.name}}</div>
+			<div class="tag" *ngFor="let user of returnRoleValue(role.id) | sort:'name'">{{user.name}}</div>
 		</td>
 	</tr>
 </table>
